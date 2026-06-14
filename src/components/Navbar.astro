@@ -1,0 +1,96 @@
+---
+const navLinks = [
+  { label: 'About', href: '#about' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Contact', href: '#contact' },
+];
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="container-custom">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <a href="/" class="text-lg font-bold tracking-tight">
+        <span class="text-accent">T</span>hrisha<span class="text-accent">.</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm text-muted hover:text-text transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <a
+        href="/Resume.pdf"
+        download
+        class="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm border border-border hover:border-accent/50 rounded-lg transition-all duration-300"
+      >
+        Resume
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      </a>
+
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-muted hover:text-text"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block py-2 text-muted hover:text-text transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/Resume.pdf"
+        download
+        class="inline-flex items-center gap-2 mt-4 px-4 py-2 text-sm border border-border rounded-lg"
+      >
+        Resume
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar?.classList.add('bg-bg/80', 'backdrop-blur-md', 'border-b', 'border-border');
+    } else {
+      navbar?.classList.remove('bg-bg/80', 'backdrop-blur-md', 'border-b', 'border-border');
+    }
+  });
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  document.querySelectorAll('#mobile-menu a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>

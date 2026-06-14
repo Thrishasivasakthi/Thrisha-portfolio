@@ -1,0 +1,44 @@
+---
+const stats = [
+  { value: 21, label: 'GitHub Repositories', suffix: '+' },
+  { value: 600, label: 'Students Mentored', suffix: '+' },
+  { value: '2nd', label: 'National Runner-Up', suffix: '' },
+  { value: 6, label: 'Certifications', suffix: '' },
+];
+---
+
+<section id="about" class="section-padding">
+  <div class="container-custom">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <div class="animate-on-scroll">
+        <p class="text-accent font-mono text-sm mb-3">About</p>
+        <h2 class="section-title">Building AI that solves real problems</h2>
+        <div class="space-y-4 text-muted leading-relaxed">
+          <p>
+            I'm Thrisha, an Associate Software Engineer and AI enthusiast passionate about building intelligent systems that solve real-world problems.
+          </p>
+          <p>
+            My work spans AI applications, full-stack development, cloud technologies, and developer tools. Notable projects include <span class="text-text font-medium">GUARDIAN AI</span>, a driver safety platform focused on detecting fatigue, distraction, and elevated accident risk, and a <span class="text-text font-medium">Hugging Face language model</span> that translates English into conversational Tamil.
+          </p>
+          <p>
+            I previously interned at <span class="text-text font-medium">Cognizant</span> for 2 months and currently work at <span class="text-text font-medium">Hexaware Technologies</span>. Alongside my professional work, I've mentored 600+ students, earned multiple technical certifications, and achieved 2nd place in a national-level hackathon.
+          </p>
+          <p>
+            I enjoy turning ideas into practical products and helping others learn technology through mentoring, workshops, and community initiatives.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 animate-on-scroll stagger-2">
+        {stats.map((stat) => (
+          <div class="glass-card text-center py-6">
+            <div class="text-3xl md:text-4xl font-bold text-accent mb-1">
+              {stat.value}<span class="text-lg">{stat.suffix}</span>
+            </div>
+            <div class="text-sm text-muted">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

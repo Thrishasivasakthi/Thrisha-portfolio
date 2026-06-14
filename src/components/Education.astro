@@ -1,0 +1,87 @@
+---
+const certifications = [
+  { name: 'AI for Real-World Applications', issuer: 'TCS iON' },
+  { name: 'AI Programming with Python', issuer: 'Udacity Nanodegree' },
+  { name: 'Google Cybersecurity Certificate', issuer: 'Google' },
+  { name: 'Microsoft Certified: Azure AI Fundamentals', issuer: 'Microsoft' },
+  { name: 'Oracle AI Certified Foundational Associate', issuer: 'Oracle' },
+  { name: 'Cloud Solution Architect', issuer: 'CDAC' },
+];
+---
+
+<section class="section-padding">
+  <div class="container-custom">
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div class="animate-on-scroll">
+        <p class="text-accent font-mono text-sm mb-3">Education</p>
+        <h2 class="section-title">Academic Background</h2>
+
+        <div class="space-y-6 mt-8">
+          <div class="glass-card p-6">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="text-lg font-bold">B.E. Computer Science</h3>
+                <p class="text-accent">Panimalar Engineering College, Chennai</p>
+              </div>
+              <span class="px-3 py-1 bg-accent/10 text-accent text-sm font-medium rounded-full">
+                CGPA: 9.0
+              </span>
+            </div>
+            <p class="text-sm text-muted mt-3">2022 — 2026</p>
+          </div>
+
+          <div class="glass-card p-6">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="font-medium">HSC (12th)</h3>
+                <p class="text-muted text-sm">Virucham International Public School, Chennai</p>
+              </div>
+              <span class="text-accent font-medium">94%</span>
+            </div>
+          </div>
+
+          <div class="glass-card p-6">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="font-medium">SSLC (10th)</h3>
+                <p class="text-muted text-sm">Round Table 35 Vivekananda Vidyalaya, Chennai</p>
+              </div>
+              <span class="text-accent font-medium">91.2%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="animate-on-scroll stagger-2">
+        <p class="text-accent font-mono text-sm mb-3">Certifications</p>
+        <h2 class="section-title">Credentials</h2>
+
+        <div class="grid sm:grid-cols-2 gap-4 mt-8">
+          {certifications.map((cert) => (
+            <div class="glass-card p-4 flex items-start gap-3">
+              <div class="w-2 h-2 bg-accent rounded-full mt-2 shrink-0" />
+              <div>
+                <p class="font-medium text-sm">{cert.name}</p>
+                <p class="text-xs text-muted">{cert.issuer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8">
+          <p class="text-accent font-mono text-sm mb-3">Leadership</p>
+          <div class="space-y-4">
+            <div class="glass-card p-4">
+              <p class="font-medium">Co-Lead, AI/ML and Deep Learning Club</p>
+              <p class="text-sm text-muted">Organized workshops for 600+ students on AI, ML, and Deep Learning</p>
+            </div>
+            <div class="glass-card p-4">
+              <p class="font-medium">Co-Lead, Neuro Nexus</p>
+              <p class="text-sm text-muted">Facilitated collaborations on neuroscience and technology</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

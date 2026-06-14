@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-6xl mx-auto px-6;
+  }
+
+  .section-padding {
+    @apply py-24;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-muted text-lg mb-12;
+  }
+
+  .glass-card {
+    @apply bg-surface/90 backdrop-blur-sm border border-border/60 rounded-2xl p-6;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1;
+  }
+
+  .accent-text {
+    @apply text-accent;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent to-purple-400 bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-coral hover:bg-coralHover text-white font-medium rounded-xl transition-all duration-300 shadow-lg shadow-coral/25;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent/50 hover:bg-surface text-text font-medium rounded-xl transition-all duration-300;
+  }
+
+  .skill-bar {
+    @apply h-2 bg-border/60 rounded-full overflow-hidden;
+  }
+
+  .skill-bar-fill {
+    @apply h-full bg-gradient-to-r from-accent to-purple-400 rounded-full transition-all duration-1000 ease-out;
+  }
+
+  .timeline-line {
+    @apply absolute left-4 md:left-1/2 w-px h-full bg-border/60;
+  }
+
+  .timeline-dot {
+    @apply absolute left-2 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-bg shadow-lg shadow-accent/30;
+  }
+}
+
+@layer utilities {
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .stagger-1 { transition-delay: 100ms; }
+  .stagger-2 { transition-delay: 200ms; }
+  .stagger-3 { transition-delay: 300ms; }
+  .stagger-4 { transition-delay: 400ms; }
+}

@@ -1,0 +1,97 @@
+---
+const experiences = [
+  {
+    role: 'Associate Software Engineer',
+    company: 'Hexaware Technologies',
+    period: '2026 — Present',
+    duration: '10 months',
+    description: 'Working on enterprise-scale applications. Contributing to AI/ML integration projects and full-stack development.',
+    current: true,
+  },
+  {
+    role: 'AI Intern',
+    company: 'Cognizant Technology Solutions',
+    period: 'Jul 2024 — Aug 2024',
+    duration: '2 months',
+    description: 'Developed AI-based applications utilizing large language models (LLMs). Enhanced user interactions and automated enterprise processes.',
+    current: false,
+  },
+  {
+    role: 'AI/ML Intern',
+    company: 'Dart16 Technologies',
+    period: 'Feb 2024 — Mar 2024',
+    duration: '2 months',
+    description: 'Built loan prediction system using machine learning algorithms. Achieved 96.7% accuracy in loan approval predictions.',
+    current: false,
+  },
+  {
+    role: 'Intern',
+    company: 'The Spark Foundation',
+    period: 'Dec 2023 — Jan 2024',
+    duration: '2 months',
+    description: 'Implemented Traffic Sign Recognition system using deep learning algorithms. Built computer vision pipeline with YOLO.',
+    current: false,
+  },
+  {
+    role: 'AI/ML Intern',
+    company: 'YBI Foundation',
+    period: 'Nov 2023 — Dec 2023',
+    duration: '2 months',
+    description: 'Gained practical experience in training models. Specialized in linear regression, decision trees, and comprehensive ML algorithms.',
+    current: false,
+  },
+];
+---
+
+<section id="experience" class="section-padding">
+  <div class="container-custom">
+    <div class="animate-on-scroll">
+      <p class="text-accent font-mono text-sm mb-3">Experience</p>
+      <h2 class="section-title">Career Journey</h2>
+      <p class="section-subtitle">From intern to engineer — building real products at every step.</p>
+    </div>
+
+    <div class="relative">
+      <div class="timeline-line top-0 bottom-0" />
+
+      <div class="space-y-12">
+        {experiences.map((exp, index) => (
+          <div class={`relative animate-on-scroll stagger-${Math.min(index + 1, 4)}`}>
+            <div class:list={[
+              'timeline-dot top-6',
+              exp.current ? 'bg-green' : 'bg-accent'
+            ]} />
+
+            <div class:list={[
+              'ml-12 md:ml-0 md:w-[calc(50%-2rem)]',
+              index % 2 === 0 ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'
+            ]}>
+              <div class:list={[
+                'glass-card-hover p-6',
+                exp.current && 'border-green/30'
+              ]}>
+                <div class="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 class="text-lg font-bold">{exp.role}</h3>
+                    <p class="text-accent">{exp.company}</p>
+                  </div>
+                  {exp.current && (
+                    <span class="px-2 py-1 bg-green/10 text-green text-xs font-medium rounded-full border border-green/20">
+                      Current
+                    </span>
+                  )}
+                </div>
+                <div class="flex items-center gap-3 text-sm text-muted mb-3">
+                  <span>{exp.period}</span>
+                  <span class="w-1 h-1 bg-border rounded-full" />
+                  <span>{exp.duration}</span>
+                </div>
+                <p class="text-muted text-sm leading-relaxed">{exp.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,87 @@
+---
+const skillCategories = [
+  {
+    title: 'Languages',
+    skills: [
+      { name: 'Python', level: 90 },
+      { name: 'Java', level: 80 },
+      { name: 'C#', level: 80 },
+      { name: 'TypeScript', level: 70 },
+      { name: 'C', level: 65 },
+      { name: 'SQL', level: 70 },
+    ],
+  },
+  {
+    title: 'Frameworks & Tools',
+    skills: [
+      { name: 'ASP.NET Core', level: 80 },
+      { name: 'React', level: 75 },
+      { name: 'Angular', level: 65 },
+      { name: 'PyTorch', level: 75 },
+      { name: 'HuggingFace', level: 80 },
+      { name: 'Node.js', level: 60 },
+    ],
+  },
+  {
+    title: 'AI/ML Specializations',
+    skills: [
+      { name: 'LLM Fine-tuning', level: 85 },
+      { name: 'Computer Vision', level: 70 },
+      { name: 'NLP', level: 80 },
+      { name: 'GenAI', level: 75 },
+      { name: 'Deep Learning', level: 75 },
+      { name: 'MLOps', level: 60 },
+    ],
+  },
+];
+
+const tools = [
+  'Git', 'Docker', 'Azure', 'SQL Server', 'MySQL', 'VS Code',
+  'Jupyter', 'Kaggle', 'Linux', 'REST APIs', 'SignalR', 'Entity Framework'
+];
+---
+
+<section id="skills" class="section-padding">
+  <div class="container-custom">
+    <div class="animate-on-scroll">
+      <p class="text-accent font-mono text-sm mb-3">Skills</p>
+      <h2 class="section-title">Tech Stack</h2>
+      <p class="section-subtitle">Languages, frameworks, and tools I work with.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      {skillCategories.map((category, catIndex) => (
+        <div class={`glass-card animate-on-scroll stagger-${catIndex + 1}`}>
+          <h3 class="text-lg font-bold mb-6">{category.title}</h3>
+          <div class="space-y-4">
+            {category.skills.map((skill) => (
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>{skill.name}</span>
+                  <span class="text-muted">{skill.level}%</span>
+                </div>
+                <div class="skill-bar">
+                  <div
+                    class="skill-bar-fill"
+                    style={`width: ${skill.level}%`}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="glass-card animate-on-scroll">
+      <h3 class="text-lg font-bold mb-4">Tools & Platforms</h3>
+      <div class="flex flex-wrap gap-3">
+        {tools.map((tool) => (
+          <span class="px-4 py-2 bg-surface text-muted text-sm rounded-xl border border-border hover:border-accent/30 transition-colors cursor-default">
+            {tool}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

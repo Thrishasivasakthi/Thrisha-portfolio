@@ -1,0 +1,176 @@
+---
+const projects = [
+  {
+    title: 'Guardian AI',
+    subtitle: 'AI-Powered Driver Safety Platform',
+    description: 'AI-powered driver safety platform that analyzes driving behavior patterns, fatigue indicators, distraction signals, and risk factors to identify elevated accident risk and support proactive safety interventions.',
+    image: '/images/guardian-dashboard.png',
+    secondaryImage: '/images/guardian-analytics.png',
+    tech: ['ASP.NET Core 8', 'React 18', 'TypeScript', 'SQL Server', 'Groq LLM', 'SignalR'],
+    highlights: [
+      'Driver behavior analytics',
+      'Fatigue and distraction risk monitoring',
+      'Emergency SOS and response workflows',
+      'AI-generated incident summaries',
+      'Insurance claim documentation support',
+      'Real-time safety dashboard',
+    ],
+    github: 'https://github.com/Thrishasivasakthi/Guardian_AI',
+    featured: true,
+  },
+  {
+    title: 'Cortex AI',
+    subtitle: 'Self-Healing Multi-Agent System',
+    description: 'Multi-agent enterprise workflow command center that detects failures, recovers autonomously, and explains its decisions. Built for exception-heavy real-world systems.',
+    image: '/images/cortex-overview.png',
+    tech: ['Python', 'FastAPI', 'TypeScript', 'Multi-Agent', 'Chaos Engineering'],
+    highlights: [
+      '8 coordinated agents',
+      'Controlled chaos engineering',
+      'Self-healing execution',
+      'Full reasoning explainability',
+      'Audit ledger for compliance',
+    ],
+    github: 'https://github.com/Thrishasivasakthi/ET_HACK',
+    featured: true,
+  },
+  {
+    title: 'Tamil NLP Translator',
+    subtitle: 'Fine-tuned LLM for Colloquial Tamil',
+    description: 'AI model that translates English to casual, spoken Tamil. Handles Tanglish, sarcasm, and multiple domains. Achieved 2nd place at national-level SAWiT.AI hackathon.',
+    image: '/images/huggingface-model.png',
+    tech: ['TinyLlama', 'LoRA', 'PyTorch', 'HuggingFace', 'PEFT'],
+    highlights: [
+      '72K training samples',
+      '5+ language domains',
+      'LoRA + 4-bit quantization',
+      'National hackathon runner-up',
+    ],
+    github: 'https://huggingface.co/ThrishaSivasakthi/TinyLlama-1.1B-Chat-v1.0_1',
+    featured: true,
+  },
+  {
+    title: 'GenAI Healthcare',
+    subtitle: 'Synthetic Patient Record Generator',
+    description: 'GenAI system that generates realistic synthetic patient data for healthcare research, addressing privacy regulations and data scarcity.',
+    image: null,
+    tech: ['Python', 'GenAI', 'Healthcare', 'Data Pipeline'],
+    highlights: [],
+    github: 'https://github.com/Thrishasivasakthi/genai-healthcare-dataops',
+    featured: false,
+  },
+];
+---
+
+<section id="projects" class="section-padding">
+  <div class="container-custom">
+    <div class="animate-on-scroll">
+      <p class="text-accent font-mono text-sm mb-3">Projects</p>
+      <h2 class="section-title">Featured Work</h2>
+      <p class="section-subtitle">AI applications and full-stack projects.</p>
+    </div>
+
+    <div class="space-y-8">
+      {projects.filter(p => p.featured).map((project, index) => (
+        <div class={`glass-card-hover overflow-hidden animate-on-scroll stagger-${index + 1}`}>
+          <div class="grid lg:grid-cols-2 gap-0">
+            <div class="relative overflow-hidden bg-surface">
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  class="w-full h-64 lg:h-full object-contain scale-85"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="w-full h-64 lg:h-full flex items-center justify-center bg-gradient-to-br from-accent/10 to-coral/10">
+                  <span class="text-6xl">🧬</span>
+                </div>
+              )}
+            </div>
+
+            <div class="p-8">
+              <p class="text-accent text-sm font-mono mb-2">{project.subtitle}</p>
+              <h3 class="text-2xl font-bold mb-4">{project.title}</h3>
+              <p class="text-muted mb-6 leading-relaxed">{project.description}</p>
+
+              {project.highlights.length > 0 && (
+                <ul class="space-y-2 mb-6">
+                  {project.highlights.map((highlight) => (
+                    <li class="flex items-start gap-2 text-sm text-muted">
+                      <span class="text-coral mt-1">→</span>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <div class="flex flex-wrap gap-2 mb-6">
+                {project.tech.map((t) => (
+                  <span class="px-2 py-1 bg-surface text-muted text-xs rounded border border-border">
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href={project.github}
+                target="_blank"
+                class="inline-flex items-center gap-2 text-sm text-coral hover:text-coralHover transition-colors"
+              >
+                View Project
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 animate-on-scroll">
+      <div class="glass-card p-6">
+        <h3 class="text-lg font-bold mb-4">More Projects</h3>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <a
+            href="https://github.com/Thrishasivasakthi/PayXpert_Net_8"
+            target="_blank"
+            class="p-4 bg-surface hover:bg-surfaceHover rounded-xl border border-border transition-all"
+          >
+            <p class="font-medium mb-1">PayXpert</p>
+            <p class="text-sm text-muted">Payment system with NUnit testing</p>
+            <div class="flex gap-2 mt-2">
+              <span class="px-2 py-0.5 bg-surface text-muted text-xs rounded border border-border">C#</span>
+              <span class="px-2 py-0.5 bg-surface text-muted text-xs rounded border border-border">.NET 8</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/Thrishasivasakthi/fastx-app"
+            target="_blank"
+            class="p-4 bg-surface hover:bg-surfaceHover rounded-xl border border-border transition-all"
+          >
+            <p class="font-medium mb-1">FastX App</p>
+            <p class="text-sm text-muted">Angular training project</p>
+            <div class="flex gap-2 mt-2">
+              <span class="px-2 py-0.5 bg-surface text-muted text-xs rounded border border-border">Angular</span>
+              <span class="px-2 py-0.5 bg-surface text-muted text-xs rounded border border-border">TypeScript</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/Thrishasivasakthi/python"
+            target="_blank"
+            class="p-4 bg-surface hover:bg-surfaceHover rounded-xl border border-border transition-all"
+          >
+            <p class="font-medium mb-1">ML Projects</p>
+            <p class="text-sm text-muted">Salary, House, Loan prediction models</p>
+            <div class="flex gap-2 mt-2">
+              <span class="px-2 py-0.5 bg-surface text-muted text-xs rounded border border-border">Python</span>
+              <span class="px-2 py-0.5 bg-surface text-muted text-xs rounded border border-border">ML</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
