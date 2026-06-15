@@ -37,12 +37,12 @@ const contactLinks = [
       </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto">
       {contactLinks.map((link, index) => (
         <a
           href={link.href}
           target={link.href.startsWith('mailto') ? '_self' : '_blank'}
-          class={`glass-card-hover p-6 text-center group animate-on-scroll stagger-${index + 1}`}
+          class={`glass-card-hover p-6 text-center group animate-on-scroll stagger-${index + 1} min-w-0`}
         >
           <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-surface border border-border flex items-center justify-center group-hover:border-accent/30 transition-colors">
             {link.icon === 'email' && (
@@ -75,7 +75,7 @@ const contactLinks = [
             )}
           </div>
           <p class="text-sm text-muted mb-1">{link.label}</p>
-          <p class="font-medium text-sm">{link.value}</p>
+          <p class="font-medium text-xs break-all">{link.value}</p>
         </a>
       ))}
     </div>
